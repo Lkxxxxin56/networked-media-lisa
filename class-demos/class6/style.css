@@ -1,0 +1,26 @@
+/* Q: What is p when defining a rule in CSS? */
+/* A: p is a selector
+there are 3 types of selector:
+- the html tag itself (ie body, p). this will select all elements that match that value
+- class: an attribute that can apply to multiple elements, regardless of the element type
+- id: an attribute that can apply to only ONE element. This is useful for JavaScript.
+*/
+
+p {
+  /* Q: What is the property that manipulates the horizontal size of the block? Write that property and give it a value of 60%*/
+  width: 60%
+  /* Q: What are the other units of measurement we use in CSS? */
+  /* A: px, pt, em, %, rem */
+}
+
+/* To be completed as a class together: */
+/* Select "blue" class */
+.blue{
+  background-color: blue;
+}
+
+/* Select "main" id */
+/* #idname */
+#main{
+  border: 2px solid red;
+}

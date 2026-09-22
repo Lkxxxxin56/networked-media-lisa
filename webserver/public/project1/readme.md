@@ -666,8 +666,6 @@ So yes: what you’re responding to is more than clever dialogue. It’s **image
 
 > there are some challenges for me: i can't write such a beautiful poem, and i need to decide on what part about me i wanna present; fit in the criteria (hypertext & multi-page); creative, not too different from this reference
 
-I think these challenges are connected: **once you find a small, personal tension, it can give you both the writing and the reason for the hyperlinks.** You don’t need to begin by writing a beautiful poem.
-
 ### Start with what’s true about you
 
 “What should we eat?” is a situation. What it reveals about you could go in several directions:
