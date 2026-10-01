@@ -1,0 +1,15 @@
+/* add width and height */
+/* really good css for every webpage/browser ever! */
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#text{
+    width: 500px;
+    height: 500px;
+    background-color: pink;
+    margin-top: 50px;
+    margin-left: 100px;
+}
