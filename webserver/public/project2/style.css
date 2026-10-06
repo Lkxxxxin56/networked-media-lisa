@@ -1,0 +1,47 @@
+/* styling the screensaver div: full width & full height */
+#screensaver {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url("assets/wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Static objects and images */
+#cow {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    width: 15%;
+}
+
+/* styles shared by ALL objects */
+.object {
+    position: absolute;
+}
+
+/* individual objects: */
+.text{
+    left: 20%;
+    top: 20%;
+    background-color: lightgrey;
+    font-size: 16px;
+    font-family: courier;
+    padding: 4px;
+    border: 2px;
+    border-color: grey;
+}
+
+.folder{
+    left: 4%;
+    top: 4%;
+    width: 100px;
+}
+
+.cursor{
+    left: 80%;
+    top: 80%;
+    width: 5%;
+}
