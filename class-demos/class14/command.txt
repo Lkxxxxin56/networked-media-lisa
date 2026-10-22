@@ -1,0 +1,9 @@
+A list of commands in order:
+cd class14
+ls
+pwd
+npm init -y
+npm install express nunjucks (templating tools)
+
+any JS files mention document are likely frontend
+any files mention require are likely backend

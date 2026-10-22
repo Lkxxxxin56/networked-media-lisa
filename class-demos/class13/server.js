@@ -17,6 +17,12 @@ app.get("/first-server", (request, response)=>{
     response.send("this is some data!");
 })
 
+// POST looks exactly the same and will handle the form data
+app.post("/form-upload", (request, response)=>{
+    response.redirect("/");
+})
+
+
 // LAST THING ALWAYS ADD
 // LISTEN: port, callback function
 app.listen(8080, ()=>{

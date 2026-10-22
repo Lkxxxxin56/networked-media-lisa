@@ -1,0 +1,26 @@
+{# no more html files but njk.#}
+{# nunjucks is just html with some server side injection #}
+<html>
+    <head>
+        <title>🐦 NYC Bird Orchestra</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+
+    <body>
+        <header>
+            <a href="/">Orchestra</a>
+            <nav>
+                <a href="/">Orchestra</a>
+                <a href="/submit">Add a Bird</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>Made from bird sightings across NYC.</footer>
+        <script src="/script.js"></script>
+    </body>
+</html>
