@@ -32,11 +32,11 @@ app.get('/', (request, response)=>{
 })
 
 // for every new njk file, we need an app.get
-app.get('form', (request, response)=>{
+app.get('/form', (request, response)=>{
         response.render('form.njk');
 })
 
-app.get('view-all', (request, response)=>{
+app.get('/view-all', (request, response)=>{
         // optional second param in response.render:
         // is the data from the server
         response.render('view-all.njk', { messagesArrayFromServer: allData });
