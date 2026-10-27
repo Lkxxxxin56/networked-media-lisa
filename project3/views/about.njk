@@ -1,28 +1,75 @@
-{% extends "baseLayout.njk" %}
+<html>
+    <head>
+        <title>About | NYC Bird Orchestra</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="container header-content">
+                {% include "nav.njk" %}
+            </div>
+        </header>
 
-{% block content %}
+        <main class="container">
+            <section class="about-intro">
+                <h1>About NYC Bird Orchestra</h1>
+                <p>A collective musical composition made from the birds we notice across New York City.<br>Each sighting is a small contribution to a shared citywide score.</p>
+            </section>
 
-    <section class="title-group">
-        <h1>About NYC Bird Orchestra</h1>
-        <p>A collective musical composition made from the birds we notice across New York City.
-        /nEach sighting is a small contribution to a shared citywide score.</p>
-    </section>
+            <hr>
 
-    <section class="subheading-content">
-        <h2>Five Boroughs, One community.</h2>
-        <p>From a familiar robin in a park to a new species on your block, every observation belongs here. NYC Bird Orchestra brings neighbors together through birdwatching, shared curiosity, and sound. You do not need to be a musician or an expert birder. Start with a bird you recognize and help build a composition that reflects the city around us.</p>
-    </section>
+            <section class="about-community">
+                <h2>Five boroughs. One community.</h2>
+                <p>From a familiar robin in a park to a new species on your block, every observation belongs here. NYC Bird Orchestra brings neighbors together through birdwatching, shared curiosity, and sound. You do not need to be a musician or an expert birder. Start with a bird you recognize and help build a composition that reflects the city around us.</p>
+            </section>
 
-    <section class="subheading-content">
-        <h2>How It Works?</h2>
-        <p>From a familiar robin in a park to a new species on your block, every observation belongs here. NYC Bird Orchestra brings neighbors together through birdwatching, shared curiosity, and sound. You do not need to be a musician or an expert birder. Start with a bird you recognize and help build a composition that reflects the city around us.</p>
-    </section>
+            <hr>
 
-    <section class="subheading-content">
-        <h2>Understanding the Score</h2>
-        <p>Read the score from left to right. Each gray rectangle represents a bird sighting.</p>
-    </section>
+            <section class="about-steps">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <article>
+                        <h3>1. Spot</h3>
+                        <p>Notice a bird in your neighborhood. Remember its species, borough, and the time you saw it.</p>
+                    </article>
+                    <article>
+                        <h3>2. Submit</h3>
+                        <p>Add your sighting using the short form. Include an observation if you would like to share more.</p>
+                    </article>
+                    <article>
+                        <h3>3. Observe</h3>
+                        <p>Return to the orchestra to explore the score. Your bird joins sightings from across the city.</p>
+                    </article>
+                </div>
+            </section>
 
-{% endblock %}
+            <hr>
 
+            <section class="about-score">
+                <h2>Understanding the Score</h2>
+                {# <p>Read the score from left to right. Each bird marker represents a sighting.</p>
+                <div class="score-example-placeholder">An example sighting on the score will appear here.</div>
+                <p>Borough determines the vertical position. Each borough has its own line.</p>
+                <p>Time determines the horizontal position. Earlier sightings appear toward the left.</p>
+                <p>The marker shows the bird species. Select it to read the observation.</p> #}
+                <img src="/assets/instruction.png" width=100%>
+            </section>
 
+            <hr>
+
+            <section class="about-invitation">
+                <h2>Join the Orchestra</h2>
+                <p>Your next bird sighting could be the next note. Add a bird to become part of the city's composition.</p>
+                <a class="button" href="/form">Add a Bird</a>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>NYC Bird Orchestra</p>
+                <p>A community composition, one sighting at a time.</p>
+            </div>
+        </footer>
+        <script src="/script.js" defer></script>
+    </body>
+</html>

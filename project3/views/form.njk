@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Submit a Sighting</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="container header-content">
+                {% include "nav.njk" %}
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="form-intro">
+                <h1>Submit a Sighting</h1>
+                <p>Your sighting becomes part of the community score.
+                    <br>Tell us which bird you spotted, where, and when.
+                    <br>All fields are required unless marked optional.
+                </p>
+                <img src="/assets/ref-chart.png" width=100%>
+                <small>This is reference chart for bird species!</small>
+            </section><br>
+
+            <form method="POST" action="/submitted">
+
+            {# 1. Bird Species #}
+            <div class="form-group">
+                <label for="species">Bird species</label>
+                <select id="species" name="species" required>
+                    <option value="" disabled selected>Select a bird</option>
+                    <option value="Blue jay">Blue jay</option>
+                    <option value="Dark-eyed junco">Dark-eyed junco</option>
+                    <option value="European starling">European starling</option>
+                    <option value="House finch">House finch</option>
+                    <option value="House sparrow">House sparrow</option>
+                    <option value="Mourning dove">Mourning dove</option>
+                    <option value="Northern cardinal">Northern cardinal</option>
+                    <option value="Rock pigeon">Rock pigeon</option>
+                    <option value="Tufted titmouse">Tufted titmouse</option>
+                    <option value="White-throated sparrow">White-throated sparrow</option>
+                    <option value="Other species">Another species not listed above</option>
+                </select>
+
+                {# hidden others section #}
+                  <div id="other-species-field" hidden>
+                    <label for="other-species">What bird did you spot?</label>
+                    <input
+                    type="text"
+                    id="other-species"
+                    name="otherSpecies"
+                    placeholder="Enter bird species"
+                    >
+                </div>
+                <small>Select the species that you observed. If you spotted more than one species, submit another form later!</small>
+            </div><br><br>
+
+            {# 2. Boroughs #}
+            <div class="form-group">
+                <label for="borough">Borough</label>
+                <select id="borough" name="borough" required>
+                    <option value="" disabled selected>Select a borough</option>
+                    <option value="Bronx">Bronx</option>
+                    <option value="Brooklyn">Brooklyn</option>
+                    <option value="Manhattan">Manhattan</option>
+                    <option value="Queens">Queens</option>
+                    <option value="Staten Island">Staten Island</option>
+                </select>
+            </div><br><br>
+
+            {# 3. Time #}
+            <div class="form-group">
+                <label for="time">Time of Sighting</label>
+                <input
+                type="time"
+                id="time"
+                name="time"
+                required
+                >
+                <small>Use 24-hour local time in New York.</small>
+            </div><br><br>
+
+            {# 4. Bird activity #}
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                    <option value="" disabled selected>Select what the bird was doing</option>
+                    <option value="Chirping/Singing">Chirping/Singing</option>
+                    <option value="Flying">Flying</option>
+                    <option value="Resting">Resting</option>
+                    <option value="Eating">Eating</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div><br><br>
+
+            {# 5. Observation #}
+            <div class="form-group">
+                <label for="observation">Observation (optional)</label>
+                <textarea
+                    id="observation"
+                    name="observation"
+                    placeholder="Describe what you observed..."
+                    rows="4"
+                ></textarea>
+            </div><br><br>
+
+            {# Submit #}
+            <button class="button" type="submit">Add a Bird</button>
+
+    </form>
+    <small>After submitting, return to the orchestra to see your bird join the community score.</small>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>NYC Bird Orchestra</p>
+                <p>A community composition, one sighting at a time.</p>
+            </div>
+        </footer>
+        <script src="/script.js" defer></script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>NYC Bird Orchestra</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                {% include "nav.njk" %}
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="home-intro">
+                <p class="huge-title">NYC Bird Orchestra</p>
+                <p>Every bird sighting adds a note to New York City's shared composition.
+                    <br>Spot a bird, share what you saw, and listen to the city together.</p>
+                <section class="home-stats">
+                    <h2>Total sightings: <span>{{ totalSightings }}</span></h2>
+                    <h2>Species observed: <span>{{ totalSpecies }}</span></h2>
+                </section><br>
+                <a class="button" href="/form">Add a Bird</a>
+            </section><br><br><br>
+
+            <section class="orchestra">
+                <h2>The Community Score</h2>
+                <p>One day across five boroughs. Hover over a bird marker to see its sighting details.</p>
+
+                <div class="score-container">
+                <svg id="score" viewBox="0 0 1000 400">
+                    {# Borough lines #}
+                    <line x1="150" y1="60" x2="950" y2="60" />
+                    <line x1="150" y1="120" x2="950" y2="120" />
+                    <line x1="150" y1="180" x2="950" y2="180" />
+                    <line x1="150" y1="240" x2="950" y2="240" />
+                    <line x1="150" y1="300" x2="950" y2="300" />
+
+                    {# Borough labels #}
+                    <text x="20" y="65">Bronx</text>
+                    <text x="20" y="125">Brooklyn</text>
+                    <text x="20" y="185">Manhattan</text>
+                    <text x="20" y="245">Staten Island</text>
+                    <text x="20" y="305">Queens</text>
+
+                    {# Time labels #}
+                    <text x="150" y="345" text-anchor="middle">00:00</text>
+                    <text x="350" y="345" text-anchor="middle">06:00</text>
+                    <text x="550" y="345" text-anchor="middle">12:00</text>
+                    <text x="750" y="345" text-anchor="middle">18:00</text>
+                    <text x="950" y="345" text-anchor="middle">24:00</text>
+                    <text x="550" y="385" text-anchor="middle">Time of sighting (New York)</text>
+
+                    <g id="bird-markers">
+                        {% for bird in birds %}
+                            <image
+                                class = "bird-marker"
+                                href="{{ bird.image }}"
+                                x="{{ bird.x - 16 }}"
+                                y="{{ bird.y - 32}}"
+                                width="40"
+                                height="40"
+                                data-species="{{ bird.species }}"
+                                data-borough="{{ bird.borough }}"
+                                data-time="{{ bird.time }}"
+                                data-status="{{ bird.status }}"
+                                data-observation="{{ bird.observation }}"
+                                >
+                                <title>{{ bird.species }} · {{ bird.borough }} · {{ bird.time }}</title>
+                                </image>
+                        {% endfor %}
+                    </g>
+                </svg>
+
+                {# Hidden card only triggered by mouse click on a plotted bird #}
+                {# note: aside is content indirectly related to main content#}
+                <aside id="bird-card" hidden>
+                    <button id="close-card" type="button">Close</button>
+                    <h3 id="card-species"></h3>
+                    <p id="card-location"></p>
+                    <p id="card-status"></p>
+                    <p id="card-observation"></p>
+                </aside>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>NYC Bird Orchestra</p>
+                <p>A community composition, one sighting at a time.</p>
+            </div>
+        </footer>
+
+        {# links to other files #}
+        <script src="/script.js" defer></script>
+    </body>
+</html>
