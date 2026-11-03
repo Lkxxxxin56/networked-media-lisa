@@ -19,8 +19,8 @@ if (birdCard) {
   const birdMarkers = document.querySelectorAll(".bird-marker");
 
   birdMarkers.forEach((marker) => {
-    marker.addEventListener("mouseenter", () => {
-      console.log("bird was hovered over");
+    marker.addEventListener("click", () => {
+      console.log("bird was clicked on");
       document.querySelector("#card-species").textContent = marker.dataset.species;
       document.querySelector("#card-location").textContent =
         `${marker.dataset.borough} · ${marker.dataset.time}`;

@@ -1,0 +1,5 @@
+1. Initialize the project clicking all yes at once
+npm init -y
+
+2. Install and connect to Mastodom
+npm install masto dotenv 
