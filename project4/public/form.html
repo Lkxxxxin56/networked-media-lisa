@@ -1,0 +1,50 @@
+<h1>London Eye Passenger Thoughts</h1>
+<p>You are someone riding the London Eye.</p>
+<p>Write down a thought you might think while riding it.</p>
+<br>
+<form method="POST" action="/add-data">
+    <div>
+        <label for="passenger-name">Passenger's name:</label>
+        <input id="passenger-name" name="passengerName">
+    </div>
+    <br>
+    <div>
+        <label for="thought">Passenger's thought: I wonder if...</label>
+        <br>
+        <textarea
+        id="thought"
+        name="thought"
+        placeholder="the London Eye ever gets dizzy"
+        ></textarea>
+    </div>
+    <br>
+        <div>
+        <label for="mood">Passenger's mood:</label>
+        <select id="mood" name="mood" required>
+            <option value="" disabled selected>Select a mood</option>
+            <option value="curious">Curious</option>
+            <option value="excited">Excited</option>
+            <option value="nostalgic">Nostalgic</option>
+            <option value="slightly terrified">Slightly terrified</option>
+            <option value="ready for tea">Ready for tea</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="weather">Weather at the moment</label>
+        <select id="weather" name="weather" required>
+            <option value="" disabled selected>Select a weather</option>
+            <option value="sunny">Sunny</option>
+            <option value="rainy">Rainy</option>
+            <option value="foggy">Foggy</option>
+            <option value="cloudy">Cloudy</option>
+            <option value="snowy">Snowy</option>
+        </select>
+    </div>
+
+    <br>
+
+    <button type="submit">Add passenger thought</button>
+</form>
+
+<script src="main.js"></script>

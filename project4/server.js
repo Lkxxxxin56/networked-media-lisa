@@ -1,0 +1,52 @@
+let express = require('express');
+let nedb = require('@seald-io/nedb');
+
+// set up variabes
+let app = express();
+let database = new nedb({
+    filename: "mydatabase.db", 
+    autoload: true
+});
+
+// set up my server normally
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended:true }));
+
+app.get('/', (request, response)=>{
+    response.send("server is working");
+})
+
+app.post('/add-data', (request, response)=>{
+    console.log(request.body);
+    let dataToBeAdded = {
+        passengerName: request.body.passengerName,
+        thought: request.body.thought,
+        mood: request.body.mood,
+        weather: request.body.weather,
+        timestamp: Date.now()
+    }
+    // add to data base
+    database.insert(dataToBeAdded, (error, newData)=>{
+        if(error){
+            console.log(error);
+            return;
+        } else {
+            console.log(newData);
+            response.send('data added successfully')
+        }
+    })
+})
+
+app.get('/get-data', (request, response)=>{
+    // query is how we ask for the data from db
+    // empty query object will give everything
+    let query = {};
+    database.find(query, (error, retrievedData)=>{
+        console.log(retrievedData);
+        response.json(retrievedData);
+    })
+})
+
+app.listen(6001, ()=>{
+    console.log("server is running on http://localhost:6001")
+})

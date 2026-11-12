@@ -2,3 +2,11 @@
 2. npm install @seald-io/nedb
 3. npm install express
 4. node --watch server.js
+
+File structure
+- server.js — Express server and database routes.
+- public/form.html — a simple form for entering a message.
+- public/main.js — browser JavaScript that requests saved data.
+- mydatabase.db — the actual database file created/used by NeDB.
+- bot.js — a separate Mastodon-bot demo, probably carried over from Class 18.
+- package.json — records installed libraries.

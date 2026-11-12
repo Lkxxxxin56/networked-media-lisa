@@ -1,0 +1,19 @@
+/* This is helpful to organize the form */
+form{
+    /* flex display allows width and height to be adjustable automatically */
+    /* flex automatically sizes child elements within the parent (form) */
+    display: flex; 
+    /* change display to stack everything into a single column */
+    flex-direction: column;
+    /* flex-grow does a proportion calculation */
+    flex-grow: 2;
+}
+
+.left, .right{
+    flex-grow: 1;
+}
+
+body{
+    display: flex;
+
+}
