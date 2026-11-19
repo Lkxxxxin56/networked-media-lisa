@@ -1,5 +1,6 @@
 let express = require('express');
 let nedb = require('@seald-io/nedb');
+let nunjucks = require('nunjucks');
 
 // set up variabes
 let app = express();
@@ -8,23 +9,28 @@ let database = new nedb({
     autoload: true
 });
 
-// set up my server normally
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended:true }));
 
+nunjucks.configure('views', {
+    autoescape: true,
+    express: app,
+});
+app.set('view engine', 'njk');
+
 app.get('/', (request, response)=>{
-    response.send("server is working");
+    response.render("form.njk");
 })
 
 app.post('/add-data', (request, response)=>{
     console.log(request.body);
-    let dataToBeAdded = {
-        passengerName: request.body.passengerName,
-        thought: request.body.thought,
-        mood: request.body.mood,
-        weather: request.body.weather,
+        let dataToBeAdded = {
+        name: request.body.name,
+        action: request.body.action,
+        number: request.body.number,
         timestamp: Date.now()
-    }
+    };
+
     // add to data base
     database.insert(dataToBeAdded, (error, newData)=>{
         if(error){
@@ -38,8 +44,6 @@ app.post('/add-data', (request, response)=>{
 })
 
 app.get('/get-data', (request, response)=>{
-    // query is how we ask for the data from db
-    // empty query object will give everything
     let query = {};
     database.find(query, (error, retrievedData)=>{
         console.log(retrievedData);
@@ -48,5 +52,5 @@ app.get('/get-data', (request, response)=>{
 })
 
 app.listen(6001, ()=>{
-    console.log("server is running on http://localhost:6001")
+    console.log("server is running")
 })

@@ -1,0 +1,26 @@
+<html>
+
+    <head>
+        <title>Wing wants some data!</title>
+    </head>
+
+    <body>
+        <section class="left"></section>
+        <form method="POST" action="/add-data">
+            <input type="text" name="name" placeholder="add a classmate name" required>
+            <input type="text" name="action" placeholder="what are they doing?" required>
+            <input 
+                type="number" 
+                name="number" 
+                min="1"
+                max="2"
+                step="1"
+                placeholder="1 or 2" 
+                required>
+
+            <input type="submit" value="send data">
+        </form>
+        <section class="right"></section>
+    </body>
+
+</html>

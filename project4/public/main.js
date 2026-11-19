@@ -4,7 +4,7 @@
 // API stands for Application Programming Interfaces
 
 async function getData(){
-    let url = "http://localhost:6001/get-data";
+    let url = "/get-data";
     let response = await fetch(url);
     let json = await response.json();
     console.log(json);
