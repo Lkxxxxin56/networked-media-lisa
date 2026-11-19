@@ -29,7 +29,7 @@ function botAwake() {
     
     // this is normally how hours are calculated:
     // const hour = new Date().getHours();
-    return londonTime >= 14 && londonTime < 15;
+    return londonTime >= 9 && londonTime < 21;
 }
 
 function writePost(json) {
