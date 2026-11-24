@@ -1,0 +1,31 @@
+{# this used to be home.njk #}
+{# this is a layout template #}
+{# blocks: placeholders to inject html depending on the place #}
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="style.css" />
+    {% block extrastylesheet %} 
+       <link rel="stylesheet" href="form.css" />
+     {% endblock %}
+  </head>
+  <body>
+    <section></section>
+    <main>
+      <nav>
+        Page Visits: {{ serverData }}
+        <div class="links">
+          <a href="/">home</a>
+          <a href="/about">about</a>
+          <div>
+            <a href="/login">login</a> /
+            <a href="/signup">signup</a>
+          </div>
+        </div>
+      </nav>
+      {% block content %} {% endblock %}
+
+    </main>
+    <section></section>
+  </body>
+</html>

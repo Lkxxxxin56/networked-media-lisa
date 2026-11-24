@@ -1,0 +1,15 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}sign up{% endblock %}
+
+{% block content %}
+  <div class="signup-form">
+    <form method="POST" action="/register">
+      <input type="text" name="username" /><br>
+      <input type="password" name="pass" /><br>
+      <input type="submit" value="make an account" /><br>
+    </form>
+    <br>
+    <a href="/login">already have an account?</a>
+  </div>
+{% endblock %}
